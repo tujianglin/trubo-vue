@@ -1,0 +1,15 @@
+{
+  "name": "@wm/typescript-config",
+  "version": "1.0.0",
+  "description": "ts配置",
+  "type": "module",
+  "license": "ISC",
+  "files": [
+    "base.json",
+    "node.json",
+    "web.json"
+  ],
+  "dependencies": {
+    "vite": "^5.3.5"
+  }
+}
