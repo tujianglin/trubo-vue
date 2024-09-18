@@ -17,5 +17,7 @@ export default {
   rules: {
     'prettier/prettier': true,
     'no-descending-specificity': null,
+    'no-empty-source': null,
+    "font-family-no-duplicate-names": null
   },
 };

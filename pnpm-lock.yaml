@@ -84,6 +84,12 @@ importers:
         specifier: ^3.4.37
         version: 3.5.6(typescript@5.6.2)
     devDependencies:
+      '@wm/layouts':
+        specifier: workspace:*
+        version: link:../../packages/layouts
+      '@wm/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
       '@wm/vite-config':
         specifier: workspace:*
         version: link:../../packages/vite-config
@@ -112,11 +118,25 @@ importers:
         specifier: ^9.4.3
         version: 9.4.3(eslint@9.10.0(jiti@1.21.6))
 
+  packages/layouts:
+    dependencies:
+      vue:
+        specifier: ^3.4.37
+        version: 3.5.6(typescript@5.6.2)
+    devDependencies:
+      vite:
+        specifier: ^5.4.6
+        version: 5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0)
+
+  packages/styles: {}
+
   packages/typescript-config:
     dependencies:
       vite:
         specifier: ^5.3.5
         version: 5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0)
+
+  packages/ui: {}
 
   packages/utils:
     dependencies:

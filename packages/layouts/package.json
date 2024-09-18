@@ -1,0 +1,19 @@
+{
+  "name": "@wm/layouts",
+  "version": "1.0.0",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "devDependencies": {
+    "vite": "^5.4.6"
+  },
+  "dependencies": {
+    "vue": "^3.4.37"
+  }
+}
