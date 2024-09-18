@@ -26,6 +26,9 @@ importers:
       '@wm/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
+      '@wm/prettier-config':
+        specifier: workspace:*
+        version: link:packages/prettier-config
       cz-git:
         specifier: ^1.9.4
         version: 1.9.4
@@ -126,6 +129,15 @@ importers:
       vue-eslint-parser:
         specifier: ^9.4.3
         version: 9.4.3(eslint@9.10.0(jiti@1.21.6))
+
+  packages/prettier-config:
+    devDependencies:
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
+      prettier-plugin-tailwindcss:
+        specifier: ^0.6.6
+        version: 0.6.6(prettier@3.3.3)
 
 packages:
 
