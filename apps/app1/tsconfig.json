@@ -1,7 +1,28 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "target": "ES2020", // 编译目标
+    "useDefineForClassFields": true, // 标准的类字段 > ES2022默认为true
+    "module": "ESNext", // 当前程序模块系统
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // 指定项目中使用到的库
+    "skipLibCheck": true, // 跳过声明文件的类型检查
+
+    /* 编译模式 */
+    "moduleResolution": "bundler", // 模块解析策略
+    "allowImportingTsExtensions": true, // 允许导入包含TypeScript文件扩展名
+    "isolatedModules": true, // 文件必须是模块
+    "moduleDetection": "force", // 非声明文件都被视为一个模块
+    "noEmit": true, // 禁止生成编译文件
+    "jsx": "preserve", // 生成指定的jsx代码
+    "jsxImportSource": "vue", // vue 项目可以写成vue
+    "types": ["vite/client"], //
+
+    /* 校验 */
+    "strict": true, // 严格模式
+    "noUnusedLocals": true, // 在未读取局部变量时启用错误报告
+    "noUnusedParameters": true, // 未读取函数参数时引发错误
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "baseUrl": "."
+  },
+  "include": ["vite.config.ts", "src/**/*.vue"]
 }
