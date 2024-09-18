@@ -22,6 +22,21 @@ export function vue(): ConfigWithExtends {
     },
     rules: {
       'vue/multi-word-component-names': 'off',
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          customGroups: {
+            items: 'items',
+            list: 'list',
+            children: 'children',
+          },
+          groups: ['unknown', 'items', 'list', 'children'],
+          ignorePattern: ['children'],
+          order: 'asc',
+          partitionByComment: 'Part:**',
+          type: 'natural',
+        },
+      ],
     },
   };
 }

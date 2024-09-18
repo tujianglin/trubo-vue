@@ -16,5 +16,6 @@ export default {
   plugins: ['@stylistic/stylelint-plugin', 'stylelint-prettier'],
   rules: {
     'prettier/prettier': true,
+    'no-descending-specificity': null,
   },
 };
