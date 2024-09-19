@@ -2,9 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [
     "scripts/*/src/**/*.ts",
-    "scripts/*/src/**/*.json"
+    "scripts/*/src/**/*.json",
+    "internal/vite-config/*.json",
+    "internal/vite-config/src/**/*.ts"
   ],
-  "globalEnv": ["NODE_ENV"],
+  "globalEnv": [
+    "NODE_ENV"
+  ],
   "tasks": {
     "build": {
       "dependsOn": [

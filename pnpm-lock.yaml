@@ -22,13 +22,13 @@ importers:
         version: 22.5.5
       '@wm/eslint-config':
         specifier: workspace:*
-        version: link:packages/eslint-config
+        version: link:internal/eslint-config
       '@wm/turbo-run':
         specifier: workspace:*
         version: link:scripts/turbo-run
       '@wm/typescript-config':
         specifier: workspace:*
-        version: link:packages/typescript-config
+        version: link:internal/typescript-config
       cz-git:
         specifier: ^1.9.4
         version: 1.9.4
@@ -95,7 +95,7 @@ importers:
         version: link:../../packages/styles
       '@wm/vite-config':
         specifier: workspace:*
-        version: link:../../packages/vite-config
+        version: link:../../internal/vite-config
       typescript:
         specifier: ^5.5.3
         version: 5.6.2
@@ -123,7 +123,7 @@ importers:
         version: link:../../packages/styles
       '@wm/vite-config':
         specifier: workspace:*
-        version: link:../../packages/vite-config
+        version: link:../../internal/vite-config
       typescript:
         specifier: ^5.5.3
         version: 5.6.2
@@ -134,7 +134,7 @@ importers:
         specifier: ^2.0.29
         version: 2.1.6(typescript@5.6.2)
 
-  packages/eslint-config:
+  internal/eslint-config:
     devDependencies:
       eslint:
         specifier: ^9.10.0
@@ -149,6 +149,45 @@ importers:
         specifier: ^9.4.3
         version: 9.4.3(eslint@9.10.0(jiti@1.21.6))
 
+  internal/typescript-config:
+    dependencies:
+      vite:
+        specifier: ^5.3.5
+        version: 5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0)
+
+  internal/vite-config:
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.1.2
+        version: 5.1.4(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))(vue@3.5.6(typescript@5.6.2))
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^4.0.1
+        version: 4.0.1(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))(vue@3.5.6(typescript@5.6.2))
+      '@wm/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
+      unocss:
+        specifier: ^0.62.4
+        version: 0.62.4(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
+      vite:
+        specifier: ^5.4.6
+        version: 5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0)
+      vite-plugin-dts:
+        specifier: ^4.2.1
+        version: 4.2.1(@types/node@22.5.5)(rollup@4.21.3)(typescript@5.6.2)(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
+      vite-plugin-html:
+        specifier: ^3.2.2
+        version: 3.2.2(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
+      vite-plugin-lib-inject-css:
+        specifier: ^2.1.1
+        version: 2.1.1(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
+      vite-plugin-vue-devtools:
+        specifier: ^7.4.5
+        version: 7.4.5(rollup@4.21.3)(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))(vue@3.5.6(typescript@5.6.2))
+
   packages/layouts:
     dependencies:
       vue:
@@ -160,12 +199,6 @@ importers:
         version: 5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0)
 
   packages/styles: {}
-
-  packages/typescript-config:
-    dependencies:
-      vite:
-        specifier: ^5.3.5
-        version: 5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0)
 
   packages/ui: {}
 
@@ -192,39 +225,6 @@ importers:
       pkg-types:
         specifier: ^1.1.3
         version: 1.2.0
-
-  packages/vite-config:
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^5.1.2
-        version: 5.1.4(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))(vue@3.5.6(typescript@5.6.2))
-      '@vitejs/plugin-vue-jsx':
-        specifier: ^4.0.1
-        version: 4.0.1(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))(vue@3.5.6(typescript@5.6.2))
-      '@wm/utils':
-        specifier: workspace:*
-        version: link:../utils
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
-      unocss:
-        specifier: ^0.62.4
-        version: 0.62.4(postcss@8.4.47)(rollup@4.21.3)(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
-      vite:
-        specifier: ^5.4.6
-        version: 5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0)
-      vite-plugin-dts:
-        specifier: ^4.2.1
-        version: 4.2.1(@types/node@22.5.5)(rollup@4.21.3)(typescript@5.6.2)(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
-      vite-plugin-html:
-        specifier: ^3.2.2
-        version: 3.2.2(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
-      vite-plugin-lib-inject-css:
-        specifier: ^2.1.1
-        version: 2.1.1(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))
-      vite-plugin-vue-devtools:
-        specifier: ^7.4.5
-        version: 7.4.5(rollup@4.21.3)(vite@5.4.6(@types/node@22.5.5)(less@4.2.0)(sass@1.79.1)(terser@5.33.0))(vue@3.5.6(typescript@5.6.2))
 
   scripts/turbo-run:
     devDependencies:
