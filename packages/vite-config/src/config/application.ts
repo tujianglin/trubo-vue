@@ -25,6 +25,7 @@ export function defineApplicationConfig(
       ...application,
     });
     const applicationConfig: UserConfig = {
+      base: './',
       build: {
         rollupOptions: {
           output: {

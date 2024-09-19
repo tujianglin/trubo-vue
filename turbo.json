@@ -1,26 +1,25 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "scripts/*/src/**/*.ts",
+    "scripts/*/src/**/*.json"
+  ],
+  "globalEnv": ["NODE_ENV"],
   "tasks": {
     "build": {
       "dependsOn": [
         "^build"
       ],
       "outputs": [
-        "dist/**",
-        "dist.zip"
-      ]
-    },
-    "lint": {
-      "dependsOn": [
-        "^lint"
+        "dist/**"
       ]
     },
     "dev": {
+      "dependsOn": [],
+      "outputs": [],
       "cache": false,
       "persistent": true
     },
-    "stub": {
-      "cache": false
-    }
+    "stub": {}
   }
 }

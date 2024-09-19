@@ -1,0 +1,10 @@
+{
+  "extends": "@wm/typescript-config/web.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.mts"]
+}

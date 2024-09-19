@@ -10,6 +10,6 @@
     "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,.gitattributes,.gitignore,.gitpod.yml,.npmrc,.browserslistrc,.node-version,.git*,.tazerc.json",
     "Dockerfile": "Dockerfile,.docker*,docker-entrypoint.sh,build-local-docker*,nginx.conf",
     "eslint.config.mjs": ".eslintignore,.prettierignore,.stylelintignore,commitlint.config.*,prettier.config.*,stylelint.config.*,lint-staged.config.*,.ls-lint*,cspell.json",
-    "tsconfig.json": "tsconfig.app.tsbuildinfo,tsconfig.app.json,tsconfig.node.json,tsconfig.node.tsbuildinfo"
+    "tsconfig.json": "tsconfig.app.tsbuildinfo,tsconfig.app.json,tsconfig.node.json,tsconfig.node.tsbuildinfo,tsconfig.tsbuildinfo"
   }
 }
