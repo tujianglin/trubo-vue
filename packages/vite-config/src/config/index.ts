@@ -1,11 +1,13 @@
 import { existsSync } from 'fs';
 import { join } from 'path';
 import { defineApplicationConfig } from './application';
+import type { DefineConfig } from '../typings';
+import { defineLibraryConfig } from './library';
 
 export * from './application';
 
 export function defineConfig(
-  userConfigPromise?: any,
+  userConfigPromise?: DefineConfig,
   type: 'application' | 'auto' | 'library' = 'auto',
 ) {
   let projectType = type;
@@ -19,7 +21,7 @@ export function defineConfig(
       return defineApplicationConfig(userConfigPromise);
     }
     case 'library': {
-      return {};
+      return defineLibraryConfig(userConfigPromise);
     }
     default: {
       throw new Error(`Unsupported project type: ${projectType}`);

@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
   setup() {
-    return () => <div>222</div>;
+    return () => <div class="text-blue">222</div>;
   },
 });
 </script>

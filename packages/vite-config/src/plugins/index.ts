@@ -2,6 +2,7 @@ import type {
   ApplicationPluginOptions,
   CommonPluginOptions,
   ConditionPlugin,
+  LibraryPluginOptions,
 } from '../typings';
 import type { PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -9,7 +10,9 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import viteVueDevTools from 'vite-plugin-vue-devtools';
 import Unocss from 'unocss/vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import viteDtsPlugin from 'vite-plugin-dts';
 import { viteInjectAppLoadingPlugin } from './inject-app-loading';
+import { libInjectCss as viteLibInjectCss } from 'vite-plugin-lib-inject-css';
 
 /**
  * 获取条件成立的 vite 插件
@@ -56,6 +59,7 @@ export async function loadCommonPlugins(
   ];
 }
 
+// app插件
 export async function loadApplicationPlugins(
   options: ApplicationPluginOptions,
 ): Promise<PluginOption[]> {
@@ -70,6 +74,27 @@ export async function loadApplicationPlugins(
     {
       condition: !!html,
       plugins: () => [createHtmlPlugin({ minify: true })],
+    },
+  ]);
+}
+
+// 工具包插件
+export async function loadLibraryPlugins(
+  options: LibraryPluginOptions,
+): Promise<PluginOption[]> {
+  // 单独取，否则commonOptions拿不到
+  const isBuild = options.isBuild;
+  const { dts, injectLibCss, ...commonOptions } = options;
+  const commonPlugins = await loadCommonPlugins(commonOptions);
+  return await loadConditionPlugins([
+    ...commonPlugins,
+    {
+      condition: isBuild && !!dts,
+      plugins: () => [viteDtsPlugin({ logLevel: 'error' })],
+    },
+    {
+      condition: injectLibCss,
+      plugins: () => [viteLibInjectCss()],
     },
   ]);
 }

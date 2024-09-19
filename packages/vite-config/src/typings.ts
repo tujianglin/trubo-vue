@@ -1,4 +1,5 @@
 import type { ConfigEnv, UserConfig, PluginOption } from 'vite';
+import type { PluginOptions } from 'vite-plugin-dts';
 
 export interface CommonPluginOptions {
   /** 是否开启devtools */
@@ -27,9 +28,25 @@ export interface ApplicationPluginOptions extends CommonPluginOptions {
   injectAppLoading?: boolean;
 }
 
+export interface LibraryPluginOptions extends CommonPluginOptions {
+  /** 开启 dts 输出 */
+  dts?: boolean | PluginOptions;
+
+  /** 是否注入lib css */
+  injectLibCss?: boolean;
+}
+
 export type ApplicationOptions = ApplicationPluginOptions;
+export type LibraryOptions = LibraryPluginOptions;
+
+export type DefineConfig = DefineApplicationOptions | DefineLibraryOptions;
 
 export type DefineApplicationOptions = (config?: ConfigEnv) => Promise<{
   application?: ApplicationOptions;
+  vite?: UserConfig;
+}>;
+
+export type DefineLibraryOptions = (config?: ConfigEnv) => Promise<{
+  library?: LibraryOptions;
   vite?: UserConfig;
 }>;

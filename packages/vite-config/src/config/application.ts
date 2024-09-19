@@ -35,6 +35,13 @@ export function defineApplicationConfig(
         },
         target: 'es2015',
       },
+      css: {
+        preprocessorOptions: {
+          less: {
+            javascriptEnabled: true,
+          },
+        },
+      },
       esbuild: {
         drop: isBuild ? ['debugger'] : [],
         legalComments: 'none',
