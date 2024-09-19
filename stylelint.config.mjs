@@ -20,4 +20,5 @@ export default {
     'no-empty-source': null,
     "font-family-no-duplicate-names": null
   },
+  ignoreFiles: ['packages/styles/*']
 };
