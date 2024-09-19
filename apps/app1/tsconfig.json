@@ -3,8 +3,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "#/*": ["./src/*"]
+      "/@/*": ["src/*"],
+      "/#/*": ["types/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.mts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "vite.config.mts"
+  ]
 }

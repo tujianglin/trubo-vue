@@ -1,33 +1,20 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Web Package",
+  "extends": "./base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
     "lib": [
-      "ES2020",
+      "ESNext",
       "DOM",
       "DOM.Iterable"
     ],
-    "skipLibCheck": true,
+    "useDefineForClassFields": true,
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "preserve",
-    "jsxImportSource": "vue",
     "types": [
       "vite/client"
     ],
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false,
-    "baseUrl": "."
-  },
-  "include": [
-    "vite.config.ts",
-    "src/**/*.vue"
-  ]
+    "declaration": false
+  }
 }

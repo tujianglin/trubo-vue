@@ -29,6 +29,9 @@ export function defineLibraryConfig(userConfigPromise?: DefineLibraryOptions) {
 
     const applicationConfig: UserConfig = {
       build: {
+        chunkSizeWarningLimit: 1000,
+        reportCompressedSize: false,
+        sourcemap: false,
         lib: {
           entry: 'src/index.ts',
           fileName: () => 'index.mjs',
